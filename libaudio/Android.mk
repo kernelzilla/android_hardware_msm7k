@@ -26,6 +26,8 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
+ifeq ($(BOARD_PROVIDES_LIBAUDIO),)
+
 LOCAL_MODULE := libaudio
 
 LOCAL_SHARED_LIBRARIES := \
@@ -53,5 +55,6 @@ endif
 
 include $(BUILD_SHARED_LIBRARY)
 
+endif # #BOARD_PROVIDES_LIBAUDIO
 endif # not BUILD_TINY_ANDROID
 
